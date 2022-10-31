@@ -1,10 +1,7 @@
 #include "clip.h"
-#ifdef TRIANGLE
-#include "triangle.h"
-#else
 #include "3rd/cdt/CDT/include/CDTUtils.h"
 #include "3rd/cdt/CDT/include/CDT.h"
-#endif
+
 void Writepoints(vector<array<double, 2>> points, string filename)
 {
     std::ofstream os(filename);
@@ -150,7 +147,6 @@ short Triangulation(vector<vec3d>& border, vector<pair<int, int>> border_edges, 
     int borderN = (int)points.size();
     bool is_success;
 
-#ifndef TRIANGLE
     CDT::Triangulation<double> cdt;
     cdt.insertVertices(
         points.begin(),
@@ -171,9 +167,6 @@ short Triangulation(vector<vec3d>& border, vector<pair<int, int>> border_edges, 
                                          (int)cdt.triangles[i].vertices[2] + 1 });
     }
     is_success = true;
-#else
-    Triangulate(points, border_edges, border_triangles, nodes, is_success, 0);
-#endif
 
     if (!is_success)
         return 2;
@@ -181,20 +174,12 @@ short Triangulation(vector<vec3d>& border, vector<pair<int, int>> border_edges, 
     for (int i = (int)border.size(); i < borderN; i++)
     {
         double x, y, z;
-#ifndef TRIANGLE
         CDT::V2d<double> vertex = cdt.vertices[i];
         x = R[0][0] * vertex.x + R[1][0] * vertex.y + T[0];
         y = R[0][1] * vertex.x + R[1][1] * vertex.y + T[1];
         z = R[0][2] * vertex.x + R[1][2] * vertex.y + T[2];
         border.push_back({ x, y, z });
         a.points.push_back({ vertex.x, vertex.y, 0 });
-#else
-        x = R[0][0] * nodes[i][0] + R[1][0] * nodes[i][1] + T[0];
-        y = R[0][1] * nodes[i][0] + R[1][1] * nodes[i][1] + T[1];
-        z = R[0][2] * nodes[i][0] + R[1][2] * nodes[i][1] + T[2];
-        border.push_back({ x, y, z });
-        a.points.push_back({ nodes[i][0], nodes[i][1], 0 });
-#endif
     }
 
     return 0;
