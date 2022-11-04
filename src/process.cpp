@@ -5,6 +5,7 @@
 #include "config.h"
 #include <iostream>
 #include <cmath>
+#include <omp.h>
 
 void ManifoldPreprocess(Params& params, Model& m, ofstream& of)
 {
