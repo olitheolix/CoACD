@@ -1,5 +1,4 @@
 #include "glm/glm.hpp"
-#include <Eigen/Core>
 #include <algorithm>
 #include <assert.h>
 #include <cstdlib>
