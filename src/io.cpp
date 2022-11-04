@@ -10,8 +10,6 @@ void SaveConfig(ofstream &of, Params params)
     of << "\tMCTS Node Number:                  " << params.downsampling << endl;
     of << "\tMCTS Iteration:                    " << params.mcts_iteration << endl;
     of << "\tMCTS Max Depth:                    " << params.mcts_max_depth << endl;
-    of << "\tManifold Preprocess (ON/OFF):      " << params.preprocess << endl;
-    of << "\tPreprocess Resolution:             " << params.prep_resolution << endl;
     of << "\tMerge Postprocess (ON/OFF):        " << params.merge << endl;
     of << "\tPCA (ON/OFF):                      " << params.pca << endl;
     of << "\tk for Rv:                          " << params.rv_k << endl;
@@ -26,8 +24,6 @@ void SaveConfig(ofstream &of, Params params)
     cout << "\tMCTS Node Number:                " << params.downsampling << endl;
     cout << "\tMCTS Iteration:                  " << params.mcts_iteration << endl;
     cout << "\tMCTS Max Depth:                  " << params.mcts_max_depth << endl;
-    cout << "\tManifold Preprocess (ON/OFF):    " << params.preprocess << endl;
-    cout << "\tPreprocess Resolution:           " << params.prep_resolution << endl;
     cout << "\tMerge Postprocess (ON/OFF):      " << params.merge << endl;
     cout << "\tPCA (ON/OFF):                    " << params.pca << endl;
     cout << "\tk for Rv:                        " << params.rv_k << endl;

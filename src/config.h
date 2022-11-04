@@ -30,9 +30,6 @@ public:
   unsigned int resolution;
   unsigned int seed;
   double rv_k;
-  bool preprocess;
-  int prep_resolution;
-  int prep_depth;
   bool pca;
   bool merge;
 
@@ -51,9 +48,6 @@ public:
     resolution = 2000;
     seed = 1234;
     rv_k = 0.3;
-    preprocess = true;
-    prep_resolution = 10000;
-    prep_depth = 8;
     pca = false;
     merge = true;
 

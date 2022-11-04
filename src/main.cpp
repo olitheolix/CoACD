@@ -45,10 +45,6 @@ int main(int argc, char *argv[])
       {
         sscanf(argv[i + 1], "%u", &params.resolution);
       }
-      if (strcmp(argv[i], "-np") == 0 || strcmp(argv[i], "--no-prerpocess") == 0)
-      {
-        params.preprocess = false;
-      }
       if (strcmp(argv[i], "-nm") == 0 || strcmp(argv[i], "--no-merge") == 0)
       {
         params.merge = false;
@@ -56,14 +52,6 @@ int main(int argc, char *argv[])
       if (strcmp(argv[i], "--pca") == 0)
       {
         params.pca = true;
-      }
-      if (strcmp(argv[i], "-pr") == 0 || strcmp(argv[i], "--prep-resolution") == 0)
-      {
-        sscanf(argv[i + 1], "%d", &params.prep_resolution);
-      }
-      if (strcmp(argv[i], "-pd") == 0 || strcmp(argv[i], "--prep-depth") == 0)
-      {
-        sscanf(argv[i + 1], "%d", &params.prep_depth);
       }
       if (strcmp(argv[i], "-s") == 0 || strcmp(argv[i], "--seed") == 0)
       {
