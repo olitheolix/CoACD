@@ -27,7 +27,6 @@ if (OPENMP_FOUND)
 endif()
 
 include_directories(src)
-include_directories(3rd/glm)
 include_directories(3rd/cdt/CDT)
 
 set(
