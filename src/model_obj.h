@@ -68,7 +68,6 @@ public:
     Model();
     bool CheckThin();
     bool LoadOBJ(const string &fileName);
-    bool Load(vector<glm::dvec3> vertices, vector<glm::ivec3> face_indices);
     void SaveOBJ(const string &fileName);
     void PCA();
     void Normalize();
