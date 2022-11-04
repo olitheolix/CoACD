@@ -134,10 +134,7 @@ int main(int argc, char *argv[])
 
   SaveConfig(of, params);
 
-  if (params.preprocess)
-    ManifoldPreprocess(params, m, of);
-  else
-    m.LoadOBJ(params.input_model);
+  m.LoadOBJ(params.input_model);
   if (params.pca)
     m.PCA();
   m.Normalize();

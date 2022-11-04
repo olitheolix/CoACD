@@ -29,7 +29,6 @@ endif()
 include_directories(src)
 include_directories(3rd/glm)
 include_directories(3rd/eigen/)
-include_directories(3rd/libigl/include)
 include_directories(3rd/cdt/CDT)
 
 set(
@@ -55,23 +54,6 @@ set(
     src/btConvexHull/btAlignedAllocator.h
     src/btConvexHull/btConvexHullComputer.cpp
     src/btConvexHull/btConvexHullComputer.h
-    src/manifold/BVH.cpp
-    src/manifold/BVH.h
-    src/manifold/Intersection.cpp
-    src/manifold/Intersection.h
-    src/manifold/Octree.h
-    src/manifold/model.cpp
-    src/manifold/model.h
-    src/manifold/Manifold.h
-    src/manifold/GridIndex_p.h
-    src/manifold/IO_p.cc
-    src/manifold/IO_p.h
-    src/manifold/Manifold_p.cc
-    src/manifold/Manifold_p.h
-    src/manifold/Octree_p.cc
-    src/manifold/Octree_p.h
-    src/manifold/types_p.h
-    src/manifold/ManifoldPlus.h
     src/model_obj.cpp 
     src/model_obj.h
     src/config.h

@@ -1,22 +1,20 @@
+#include "glm/glm.hpp"
+#include <Eigen/Core>
 #include <algorithm>
 #include <assert.h>
+#include <cstdlib>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <map>
+#include <set>
 #include <sstream>
 #include <stdio.h>
 #include <string.h>
 #include <string>
-#include <vector>
-#include <cstdlib>
 #include <time.h>
-#include <assert.h>
-#include <algorithm>
-#include <set>
-#include <map>
 #include <unordered_map>
-#include "glm/glm.hpp"
-#include "manifold/types_p.h"
+#include <vector>
 
 #pragma once
 
@@ -27,6 +25,7 @@
 using namespace std;
 
 #define INF numeric_limits<double>::max()
+
 
 /* Copyright to V-HACD */
 struct Material
@@ -71,7 +70,6 @@ public:
     bool CheckThin();
     bool LoadOBJ(const string &fileName);
     bool Load(vector<glm::dvec3> vertices, vector<glm::ivec3> face_indices);
-    bool Load(MatrixD vertices, MatrixI face_indices);
     void SaveOBJ(const string &fileName);
     void PCA();
     void Normalize();
